@@ -6,72 +6,50 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/navbar";
 import clsx from "clsx";
 import {  Dropdown,  DropdownTrigger,  DropdownMenu,  DropdownSection,  DropdownItem} from "@heroui/dropdown";
 import { FaBars } from "react-icons/fa6";
+import { Avatar } from "@heroui/avatar";
+import { siteConfig } from "@/config/site";
+import ThemeSwitch from "./ThemeSwitch";
 
 
 export default function NavigationBar() {
-  const MenuDropdown = () => {
-    return (
-      <Dropdown >
-      <DropdownTrigger>
-        <FaBars size={24} />
-      </DropdownTrigger>
-      <DropdownMenu aria-label="Link Actions">
-        <DropdownItem key="About" href="/#AboutMe">
-          About
-        </DropdownItem>
-        <DropdownItem key="Services" href="/#Services">
-          Services
-        </DropdownItem>
-        <DropdownItem key="Contact" href="/#Contact">
-          Contact
-        </DropdownItem>
-        <DropdownItem key="Packages" href="https://www.blueprintwebdev.com/webpackages">
-          Website Packages
-        </DropdownItem>
-      </DropdownMenu>
-    </Dropdown>
-    )
-  }
+  
   return (
-    <Navbar position="static">
-      <NavbarBrand>        
-        <div className="text-center">
-          <p className={clsx('uppercase', fontFira.className)}>Your Awesome Business</p>
-          {/* <p className="font-bold text-inherit">ACME</p> */}
-          <p className="text-sm">by Bivens Blueprint</p>
-        </div>
-        
+    <Navbar maxWidth='full' shouldHideOnScroll={false} position="sticky">
+      <NavbarBrand>     
+        <Avatar src='/BP_Logo.png' />
+        <p className={clsx(fontFira.className,
+          "ml-2 font-bold text-inherit leading-4 uppercase hidden md:block")}>Template <br/> Website 02</p>
       </NavbarBrand>
 
+      <NavbarContent justify="end">
+        <NavbarItem>
+          <ThemeSwitch />
+        </NavbarItem>
+      </NavbarContent>
+
       <NavbarContent justify="end"  className="hidden md:flex">
-        <NavbarItem>
-          <Link isBlock color="foreground" href="/#AboutMe">
-            About
-          </Link>
-        </NavbarItem>
+        {siteConfig.navItems.map(({ label, href }, index) => (
+          <NavbarItem key={index}>
+            <Link isBlock color="foreground" href={href}>
+              {label}
+            </Link>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
 
-        <NavbarItem>
-          <Link isBlock color="foreground" href="/#Services">
-            Services
-          </Link>
-        </NavbarItem>
-
-        <NavbarItem>
-          <Link isBlock color="foreground" href="/#Contact">
-            Contact
-          </Link>
-        </NavbarItem>
-
+      <NavbarContent justify="end">
         <NavbarItem isActive>
-          <Link isExternal isBlock color="foreground" href="https://www.blueprintwebdev.com/webpackages">
-            Website Packages
-          </Link>
+          <Button
+            as={Link}
+            isExternal
+            href={siteConfig.company.lead}
+            variant='faded'
+          >
+            Get Started
+          </Button>
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent justify="end" className="flex md:hidden">
-        <MenuDropdown />
-      </NavbarContent>
     </Navbar>
   );
 }

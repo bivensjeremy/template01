@@ -1,69 +1,37 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Template Website 01",
-  description: "This website could be yours.",
+  name: "Blueprint Web Dev",
+  description: "Professional Web Development Services",
   navItems: [
     {
       label: "Home",
-      href: "/",
-    },
-    {
-      label: "Docs",
-      href: "/docs",
-    },
-    {
-      label: "Pricing",
-      href: "/pricing",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
+      href: "/#home",
     },
     {
       label: "About",
-      href: "/about",
-    },
-  ],
-  navMenuItems: [
-    {
-      label: "Profile",
-      href: "/profile",
+      href: "/#about"
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Services",
+      href: "/#services",
     },
     {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Team",
-      href: "/team",
-    },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Contact Us",
+      href: "/#contact",
     },
   ],
   links: {
-    github: "https://github.com/heroui-inc/heroui",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    facebook: "https://www.facebook.com/bivensblueprint",
+    instagram: "https://www.instagram.com/bivensjeremy",
+    business: "https://www.bivensblueprint.com",
+    linkedin: "https://www.linkedin.com/in/bivensjeremy",
+    business2: "https://www.blueprintwebdev.com"
   },
+  company: {
+    phone: "478-280-8388",
+    address: ["779 Fiveash Rd", "Oakfield, GA 31772"],
+    email: "admin@bivensblueprint.com",
+    lead: "https://bivensblueprintllc.hbportal.co/public/blueprintwebdevleadform"
+  }
 };

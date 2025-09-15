@@ -1,6 +1,6 @@
 {
-  "name": "next-app-template",
-  "version": "0.0.1",
+  "name": "blueprintwebdev-template-02",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -9,6 +9,8 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
+    "@heroui/accordion": "^2.2.23",
+    "@heroui/avatar": "^2.2.21",
     "@heroui/button": "2.2.21",
     "@heroui/card": "^2.2.20",
     "@heroui/code": "2.2.16",
@@ -22,7 +24,7 @@
     "@heroui/navbar": "2.2.19",
     "@heroui/snippet": "2.2.22",
     "@heroui/switch": "2.2.19",
-    "@heroui/system": "2.4.17",
+    "@heroui/system": "^2.4.22",
     "@heroui/theme": "2.4.17",
     "@react-aria/ssr": "3.9.9",
     "@react-aria/visually-hidden": "3.8.24",

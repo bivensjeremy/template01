@@ -1,3 +1,4 @@
+import { siteConfig } from "@/config/site";
 import { Link } from "@heroui/link";
 
 
@@ -10,8 +11,9 @@ const Footer = () => {
                 href="https://blueprintwebdev.com"
                 title="BlueprintWebDev.com homepage"
             >
-				<span className="text-default-600">Powered by</span>
-				<p className="text-primary">Bivens Blueprint, LLC</p>
+				<p className='text-xs text-center bg-background'>
+                &copy; {new Date().getFullYear()} {siteConfig.name}
+            </p>
 			</Link>
 		</footer>
     );

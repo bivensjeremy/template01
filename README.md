@@ -1,20 +1,64 @@
-# Next.js & HeroUI Template
+Website Structure
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+1. Header
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+•  Logo placeholder
+•  Navigation menu (Home, About, Services, Contact)
+•  Call-to-action button (e.g., “Get Started” or “Request Info”)
+•  Optional: Language selector or login link
 
-## Technologies Used
+2. Hero Section
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+•  Headline: Clear value proposition or welcome message
+•  Subtext: Brief supporting statement
+•  Primary CTA: Button (e.g., “Explore Services”)
+•  Optional: Image or illustration placeholder
 
-## How to Use
+3. About / Overview
 
+•  Intro paragraph: Who you are, what you offer
+•  Key highlights: Mission, values, differentiators
+•  Optional: Timeline or “How it works” steps
 
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+4. Services / Features
+
+•  Modular cards or sections for:
+  ⁠◦  Service name
+  ⁠◦  Short description
+  ⁠◦  Optional icon or image
+  ⁠◦  CTA (e.g., “Learn More”)
+
+5. Testimonials / Social Proof
+
+•  Quote blocks or cards with:
+  ⁠◦  Client name
+  ⁠◦  Role or company
+  ⁠◦  Feedback snippet
+•  Optional: Star ratings or logos
+
+6. Pricing / Packages
+
+•  Tiered layout (e.g., Basic, Pro, Premium)
+•  Each tier includes:
+  ⁠◦  Name
+  ⁠◦  Price
+  ⁠◦  Features list
+  ⁠◦  CTA button
+
+7. FAQ
+
+•  Accordion-style layout
+•  Common questions about services, process, policies
+
+8. Contact / Inquiry
+
+•  Form fields: Name, Email, Message
+•  Optional: Phone, dropdown for service type
+•  Map or location block (if relevant)
+
+9. Footer
+
+•  Navigation links
+•  Social media icons
+•  Legal links (Privacy Policy, Terms)
+•  Optional: Newsletter signup

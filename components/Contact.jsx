@@ -1,119 +1,40 @@
-'use client'
 import { fontFira } from "@/config/fonts";
 import { Button } from "@heroui/button";
-import {Form} from "@heroui/form";
-import { Input, Textarea } from "@heroui/input";
 import clsx from "clsx";
 import Image from "next/image";
-import { useState } from "react";
 import { FaFacebook, FaTiktok, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import SectionHeader from "./SectionHeader";
+import HoneyBookWidget from "./HoneyBookWidget";
+import { siteConfig } from "@/config/site";
+import { footerData } from "@/config/data";
+import { Link } from "@heroui/link";
 
 const Contact = () => {
-    const [action, setAction] = useState(null);
 
     return (
-        <section id="Contact" className="pt-6 rounded-t-lg">
-            <div className=" px-24 py-12">
-                <div className="container flex flex-col md:flex-row">
-                    <div className="w-1/2 flex flex-col">
+        <section id="contact" className="pt-6 rounded-t-lg">
+            <div className="px-4 md:px-24 pt-12">
+                <div className="container">
+                    <div className="">
                         <div className="">
                             <SectionHeader title={'Contact'} />
-                            
 
-                            <p className={clsx('pb-12')}>
-                                123 Your Business Address <br/>Atlanta, GA 30303<br />
-                            </p>
+                            <div className="">
+                                <HoneyBookWidget />
+                            </div>
 
-                            <p className={clsx('pb-12')}>
-                                Tel: 123-456-7890
-                            </p>
-
-                            <p className={clsx('pb-12')}>
-                                you@yourawesomebusiness.com
-                            </p>
-
-                            <div className={clsx('pb-12 flex flex-row justify-between  max-w-sm')}>
-                                <FaFacebook className="w-5 h-5" />
-                                <FaInstagram className="w-5 h-5" />
-                                <FaXTwitter className="w-5 h-5" />
-                                <FaTiktok className="w-5 h-5" />
+                            <div className="flex justify-center gap-4 text-2xl text-primary mb-1">
+                                {footerData.map(({ id, link, image: Icon, color }) => (
+                                    <Link isExternal key={id} href={link}>
+                                        <Icon 
+                                            size={16}
+                                            color={color} 
+                                        />
+                                    </Link>
+                                ))}
                             </div>
                         </div>
-                    </div>
-
-                    <div className="w-full md:w-1/2">
-                        <Form
-                            className="gap-4 "
-                            onReset={() => setAction("reset")}
-                            onSubmit={(e) => {
-                                e.preventDefault();
-                                let data = Object.fromEntries(new FormData(e.currentTarget));
-
-                                setAction(`submit ${JSON.stringify(data)}`);
-                            }}
-                        >
-                            <div className="grid gap-4 w-full">
-                                <Input
-                                    isRequired
-                                    errorMessage="Please enter a valid first name"
-                                    label="First Name"
-                                    labelPlacement="outside"
-                                    name="fistName"
-                                    placeholder="Enter your first name"
-                                    type="text"
-                                />
-
-                                <Input
-                                    isRequired
-                                    errorMessage="Please enter a valid last name"
-                                    label="Last Name"
-                                    labelPlacement="outside"
-                                    name="lastName"
-                                    placeholder="Enter your last name"
-                                    type="text"
-                                />
-
-                                <Input
-                                    isRequired
-                                    errorMessage="Please enter your email"
-                                    label="Email"
-                                    labelPlacement="outside"
-                                    name="emailAddress"
-                                    placeholder="Enter your email"
-                                    type="email"
-                                    className="col-span-2"
-                                />
-
-                                <Input
-                                    errorMessage="Please enter a valid subject"
-                                    label="Subject"
-                                    labelPlacement="outside"
-                                    name="username"
-                                    placeholder="Enter your subject"
-                                    type="text"
-                                    className="col-span-2"
-                                />
-
-                                <Textarea
-                                    className="col-span-2"
-                                    label="Message"
-                                    labelPlacement="outside"
-                                    placeholder="Enter your message"
-                                />
-                            </div>
-                            
-                            <div className="flex gap-2 w-full flex-row justify-between">
-                                <Button type="reset" variant="flat">
-                                Reset
-                                </Button>
-
-                                <Button color="secondary" type="submit">
-                                Submit
-                                </Button>
-                            </div>
-                        </Form> 
-                    </div>
+                    </div>                    
                 </div>
             </div>
         </section>

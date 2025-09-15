@@ -1,39 +1,66 @@
+'use client'
 import { fontFira } from "@/config/fonts";
+import { siteConfig } from "@/config/site";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import clsx from "clsx";
+import { useTheme } from "next-themes";
 
 const Hero = () => {
+    const { theme } = useTheme();
+    const isLight = theme === "light";
+
     return (
-        <div className="min-h-screen bg-cover bg-center bg-[url('/wallpaper.png')]">
-            <div className="my-auto min-h-screen text-center bg-black bg-opacity-40 flex flex-col justify-center px-6">
+        <section id='home' className={`
+            min-h-screen bg-cover bg-center 
+            ${isLight ? "bg-[url('/wallpaper02.jpg')]" : "bg-[url('/wallpaper.png')]"}
+        `}>
+            <div className="min-h-screen text-start flex flex-col justify-end max-w-4xl pb-24 px-4 md:px-24">
                 <h1 className={clsx('pt-12 font-bold text-xl text-zinc-50')}>
-                    Bivens Blueprint Template Website
+                    <span className='text-[#1f3c88] bg-zinc-50 rounded-md p-1'>Blueprint Web Dev</span> Template Website
+                </h1>
+        
+                <h1 className={clsx(
+                    fontFira.className,
+                    "font-heading text-7xl font-bold mb-4 max-w-6xl text-primary-foreground"
+                )}>
+                    <span className="text-shadow-md"></span>Your Awesome Business
                 </h1>
 
-                <h1 className={clsx(fontFira.className, 'text-7xl py-8 text-zinc-50')}>
-                    Your Awesome Business
-                </h1>
-                <h1 className={clsx('pb-8 max-w-lg mx-auto text-zinc-50')}>
-                    Bivens Blueprint offers several template websites to get your business up and running fast. These sites are perfect for startups and small businesses who need a quick, polished web presence. Click the link below to get started.
-                </h1>
-
-                <div>
+                <p className="text-lg mb-6 max-w-xl text-primary-foreground">
+                    Blueprint Web Dev offers several template websites to get your business up and running fast. These sites are perfect for startups and small businesses who need a quick, polished web presence. Click the link below to get started.
+                </p>
+                
+                <div className="flex flex-col md:flex-row gap-2 max-w-sm md:max-w-md">
                     <Button
-                        showAnchorIcon
                         as={Link}
                         color="primary"
                         size="lg"
-                        href="https://www.honeybook.com/widget/bivens_blueprint_llc_191523/cf_id/612fa0a4ceb19b0e829a228d"
+                        isExternal
+                        href={siteConfig.company.lead}
                         variant="solid"
-                        className="text-white"
-                        >
-                        Get This Design
+                        radius="lg"
+                        className="font-semibold w-full"
+                    >
+                        Get This Layout
+                    </Button>
+
+                    <Button
+                        as={Link}
+                        color="accent"
+                        size="lg"
+                        isExternal
+                        href={siteConfig.links.business2}
+                        variant="bordered"
+                        radius="lg"
+                        className="font-semibold text-secondary-foreground w-full"
+                    >
+                        Blueprint Web Dev
                     </Button>
                 </div>
                 
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -4,75 +4,68 @@ import { Card, CardFooter, CardBody, CardHeader } from "@heroui/card";
 import { Divider } from "@heroui/divider";
 import clsx from "clsx";
 import Image from "next/image";
-import Link from "next/link";
 import SectionHeader from "./SectionHeader";
-
+import { pricingPlans } from "@/config/data";
+import { siteConfig } from "@/config/site";
+import { Link } from "@heroui/link";
 
 const Services = () => {
 
-    const serviceData = [
-        {
-            title: 'Consultation',
-            description: 'Use this area to describe your service',
-            duration: '45 min',
-            cost: 'Free'
-        },
-        {
-            title: 'Sample Service 01',
-            description: 'Use this area to describe your service',
-            duration: '1 hr',
-            cost: '$70'
-        },
-        {
-            title: 'Sample Service 02',
-            description: 'Use this area to describe your service',
-            duration: '1 hr',
-            cost: '$110'
-        },
-        {
-            title: 'Sample Service 03',
-            description: 'Use this area to describe your service',
-            duration: '1 hr',
-            cost: '$180'
-        }
-    ]
-
     return (
-        <section id="Services" className="px-24 py-12 bg-secondary">
+        <section id="services" className="px-4 md:px-24 py-12 bg-secondary">
             <div className="container">
                 <SectionHeader title={'Services'} />
 
-                <div className="flex flex-col lg:flex-row gap-6 justify-between">
-                    {serviceData.map(({ title, description, duration, cost }) => (
-                        <div key={title}>
-                            <Card radius="none" className="border-8 bg-transparent border-grey">
-                                <CardHeader className="flex gap-3">
-                                    <p className={clsx(fontFira.className, "text-xl uppercase mx-auto text-grey")}>
-                                        {title}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {pricingPlans.map(({ name, desc, price, features, featured, icon: Icon }, index) => (
+                        <Card key={index} className={`dark:text-background`}>
+                            <CardHeader className='pb-0 px-6'>
+                                <div className="flex gap-3">
+                                    <Icon size={32} />
+                                    <p className={clsx(
+                                        fontFira.className, 
+                                        "text-start text-lg"
+                                    )}>
+                                        {name}
                                     </p>
-                                </CardHeader>
+                                </div>
+                            </CardHeader>
 
-                                <hr className="border-2 border-grey" />
+                            <CardBody>
+                                <p className={clsx(
+                                        fontFira.className, 
+                                        "text-start text-4xl lg:text-5xl px-6"
+                                    )}>
+                                    {price}
+                                </p>
+                            </CardBody>
 
-                                <CardBody className="mx-auto text-center gap-10">
-                                    <p>{description}</p>
-                                    <p>{duration}</p>
-                                    <p className="italic">{cost}</p>
-                                </CardBody>
+                            <CardBody>
+                                <ul className="list-disc list-inside text-base px-6">
+                                    {features.map((feature, idx) => (
+                                        <li key={idx} className="flex gap-2 mb-3">
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </CardBody>
 
-
-                                <CardFooter>
-                                    <Button className="mx-auto bg-grey text-white" variant="solid" radius="none" >
-                                        Book
-                                    </Button>
-                                </CardFooter>
-                            </Card>
-                        
-                        </div>
+                            <CardFooter>
+                                <Button
+                                    as={Link}
+                                    color='primary'
+                                    isExternal
+                                    href={siteConfig.company.lead}
+                                    variant="solid"
+                                    className="font-semibold w-full"
+                                >
+                                    Get This Layout
+                                </Button>
+                            </CardFooter>
+                        </Card>
                     ))}
                 </div>
             </div>
-            
         </section>
     );
 }
