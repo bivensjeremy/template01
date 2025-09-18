@@ -12,7 +12,7 @@ const Hero = () => {
 
     return (
         <section id='home' className={`
-            min-h-screen bg-cover bg-center 
+            min-h-screen bg-cover bg-center
             ${isLight ? "bg-[url('/wallpaper02.jpg')]" : "bg-[url('/wallpaper.png')]"}
         `}>
             <div className="min-h-screen text-start flex flex-col justify-end max-w-4xl pb-24 px-4 md:px-24">

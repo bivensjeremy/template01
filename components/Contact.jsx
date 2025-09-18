@@ -14,7 +14,7 @@ const Contact = () => {
     return (
         <section id="contact" className="pt-6 rounded-t-lg">
             <div className="px-4 md:px-24 pt-12">
-                <div className="container">
+                <div className="container mx-auto">
                     <div className="">
                         <div className="">
                             <SectionHeader title={'Contact'} />
@@ -23,7 +23,7 @@ const Contact = () => {
                                 <HoneyBookWidget />
                             </div>
 
-                            <div className="flex justify-center gap-4 text-2xl text-primary mb-1">
+                            <div className="flex justify-center gap-4 text-2xl text-primary mt-3">
                                 {footerData.map(({ id, link, image: Icon, color }) => (
                                     <Link isExternal key={id} href={link}>
                                         <Icon 

@@ -13,12 +13,12 @@ const Services = () => {
 
     return (
         <section id="services" className="px-4 md:px-24 py-12 bg-secondary">
-            <div className="container">
+            <div className="container mx-auto">
                 <SectionHeader title={'Services'} />
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {pricingPlans.map(({ name, desc, price, features, featured, icon: Icon }, index) => (
-                        <Card key={index} className={`dark:text-background`}>
+                        <Card key={index} className={`dark:text-primary-foreground`}>
                             <CardHeader className='pb-0 px-6'>
                                 <div className="flex gap-3">
                                     <Icon size={32} />

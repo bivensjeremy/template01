@@ -11,8 +11,8 @@ const AboutMe = () => {
     const isLight = theme === 'light';
 
     return (
-        <section id="about" className="bg-background">
-            <div className="container grid grid-cols-1 md:grid-cols-2 px-4 md:px-24 py-12 gap-6">
+        <section id="about" className="bg-background px-4 md:px-24 py-12">
+            <div className="container grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto">
                 <div className="">
                     <SectionHeader title={'About Us'} />
                     <div className="">

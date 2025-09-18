@@ -12,7 +12,7 @@ const Features = () => {
 
                 <div className="grid w-full md:w-[600px] grid-cols-1 md:grid-cols-2 place-content-center gap-4 m-auto">
                     {featuresData.map(({ id, title, desc, icon: Icon }) => (
-                        <Card key={id} className="p-6 dark:text-background">
+                        <Card key={id} className="p-6 dark:text-primary-foreground">
                             <CardHeader className="flex flex-col">
                                 <Icon size={64} />
                             </CardHeader>

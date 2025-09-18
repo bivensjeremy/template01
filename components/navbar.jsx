@@ -4,8 +4,6 @@ import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/navbar";
 import clsx from "clsx";
-import {  Dropdown,  DropdownTrigger,  DropdownMenu,  DropdownSection,  DropdownItem} from "@heroui/dropdown";
-import { FaBars } from "react-icons/fa6";
 import { Avatar } from "@heroui/avatar";
 import { siteConfig } from "@/config/site";
 import ThemeSwitch from "./ThemeSwitch";
@@ -14,11 +12,11 @@ import ThemeSwitch from "./ThemeSwitch";
 export default function NavigationBar() {
   
   return (
-    <Navbar maxWidth='full' shouldHideOnScroll={false} position="sticky">
+    <Navbar maxWidth='2xl' shouldHideOnScroll={false} position="sticky">
       <NavbarBrand>     
         <Avatar src='/BP_Logo.png' />
         <p className={clsx(fontFira.className,
-          "ml-2 font-bold text-inherit leading-4 uppercase hidden md:block")}>Template <br/> Website 02</p>
+          "ml-2 font-bold text-inherit leading-4 uppercase hidden md:block")}>Template <br/> Website 01</p>
       </NavbarBrand>
 
       <NavbarContent justify="end">
