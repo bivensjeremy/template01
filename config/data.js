@@ -47,7 +47,7 @@ export const pricingPlans = [
     },
     {
         name: "Conversion",
-        price: "$2,800",
+        price: "$2,000",
         desc: "A high-impact, single page site designed to generate leads.",
         features: ['Single-page, conversion-focused layout', 'Strategic messaging & CTAs', 'Lead capture integrations', 'Optimized for fast loading & clarity'],
         icon: LuZap
